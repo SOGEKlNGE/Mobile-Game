@@ -12,12 +12,37 @@ public class movement : MonoBehaviour
     public Button leftButton;
     public Button rightButton;
 
+
     private void Start()
     {
-        upButton.onClick.AddListener(MoveUp);
-        downButton.onClick.AddListener(MoveDown);
-        leftButton.onClick.AddListener(MoveLeft);
-        rightButton.onClick.AddListener(MoveRight);
+        if (gyroManager.instance != null && gyroManager.instance.enableGyroInput)
+        {
+            Input.gyro.enabled = true; // Enable the gyroscope
+            Debug.Log("Movement gyro scope something happened" );
+
+        }
+        else
+        {
+            upButton.onClick.AddListener(MoveUp);
+            downButton.onClick.AddListener(MoveDown);
+            leftButton.onClick.AddListener(MoveLeft);
+            rightButton.onClick.AddListener(MoveRight);
+        }
+    }
+
+    public void Update()
+    {
+        if (gyroManager.instance != null && gyroManager.instance.enableGyroInput)
+        {
+            GyroControl();
+            Debug.Log("UPDATE MOVEMENT gyro scope something happened");
+        }
+    }
+
+    private void GyroControl()
+    {
+        Vector3 gyroInput = Input.gyro.rotationRate; 
+        transform.position += new Vector3(gyroInput.x, gyroInput.y, 0) * Time.deltaTime * move;
     }
 
     public void MoveUp()
