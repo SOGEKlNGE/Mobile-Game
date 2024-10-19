@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: bowl
+    uniqueID: 2009259971
+    locked: 0
+  - name: table
+    uniqueID: 441448549
+    locked: 0
