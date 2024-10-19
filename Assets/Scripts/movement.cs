@@ -5,21 +5,27 @@ using UnityEngine.UI;
 
 public class movement : MonoBehaviour
 {
-    public float move = 1f;
+    public float move = 2f;
 
     public Button upButton;
     public Button downButton;
     public Button leftButton;
     public Button rightButton;
 
+    private Vector3 smoothGyroInput;  
+    public float gyroSensitivity = 0.5f;  
+    public float gyroSmooth = 0.1f; 
 
     private void Start()
     {
         if (gyroManager.instance != null && gyroManager.instance.enableGyroInput)
         {
-            Input.gyro.enabled = true; // Enable the gyroscope
-            Debug.Log("Movement gyro scope something happened" );
-
+            Input.gyro.enabled = true; 
+            Debug.Log("Movement gyro scope something happened");
+            rightButton.gameObject.SetActive(false);
+            leftButton.gameObject.SetActive(false);
+            downButton.gameObject.SetActive(false);
+            upButton.gameObject.SetActive(false);
         }
         else
         {
@@ -41,8 +47,9 @@ public class movement : MonoBehaviour
 
     private void GyroControl()
     {
-        Vector3 gyroInput = Input.gyro.rotationRate; 
-        transform.position += new Vector3(gyroInput.x, gyroInput.y, 0) * Time.deltaTime * move;
+        Vector3 gyroInput = Input.gyro.rotationRate;
+        smoothGyroInput = Vector3.Lerp(smoothGyroInput, gyroInput, gyroSmooth);
+        transform.position += new Vector3(smoothGyroInput.x, smoothGyroInput.y, 0) * gyroSensitivity;
     }
 
     public void MoveUp()

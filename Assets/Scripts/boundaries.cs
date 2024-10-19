@@ -33,6 +33,6 @@ public class boundaries : MonoBehaviour
 
         transform.position = viewPos;
     }
-}
+}  
 
 // https://www.youtube.com/watch?v=ailbszpt_AI

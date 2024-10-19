@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec6aad03a23de74ebbceb2085e473ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: 0.5
+  move: 2
   upButton: {fileID: 1168458988}
   downButton: {fileID: 1974941986}
   leftButton: {fileID: 1293426241}
