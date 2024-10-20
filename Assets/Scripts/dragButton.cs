@@ -16,6 +16,11 @@ public class dragButton : MonoBehaviour
     private void OnButtonClick()
     {
         dragManager.instance.enableDragInput = !dragManager.instance.enableDragInput;
-        Debug.Log("Drag Condition Met: " + dragManager.instance.enableDragInput);
+        Debug.Log("Drag Condition Met (expecting true): " + dragManager.instance.enableDragInput);
+
+        if (dragManager.instance.enableDragInput == false)
+        {
+            Debug.Log("Drag Condition Met (expecting false):" + dragManager.instance.enableDragInput);
+        }
     }
 }

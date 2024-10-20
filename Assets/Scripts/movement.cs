@@ -15,11 +15,17 @@ public class movement : MonoBehaviour
 
     private Vector3 smoothGyroInput;  
     public float gyroSensitivity = 0.5f;  
-    public float gyroSmooth = 0.1f; 
+    public float gyroSmooth = 0.1f;
+
+    private Vector3 dragOffset;
+    private Camera mainCamera;
+
 
     private void Start()
     {
-      
+
+        mainCamera = Camera.main;
+
 
         if (gyroManager.instance != null && gyroManager.instance.enableGyroInput)
         {
@@ -50,6 +56,11 @@ public class movement : MonoBehaviour
             GyroControl();
             Debug.Log("UPDATE MOVEMENT gyro scope something happened");
         }
+        else if (dragManager.instance.enableDragInput)
+        {
+            HandleDrag(); 
+        }
+
     }
 
     private void GyroControl()
@@ -59,6 +70,29 @@ public class movement : MonoBehaviour
         transform.position += new Vector3(smoothGyroInput.x, smoothGyroInput.y, 0) * gyroSensitivity;
     }
 
+    private void HandleDrag()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    
+                    Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+                    dragOffset = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y));
+                    break;
+
+                case TouchPhase.Moved:
+                    
+                    Vector3 newPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y)) + dragOffset;
+                    newPosition.z = 0;
+                    transform.position = newPosition;
+                    break;
+            }
+        }
+    }
 
     public void MoveUp()
     {

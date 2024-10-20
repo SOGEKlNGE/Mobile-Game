@@ -10,7 +10,6 @@ public class dragManager : MonoBehaviour
 
     private void Awake()
     {
-
         if (instance == null)
         {
             instance = this;
