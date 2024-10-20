@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Food
   layers:
   - Default
   - TransparentFX
@@ -47,9 +48,9 @@ TagManager:
   - name: table
     uniqueID: 441448549
     locked: 0
-  - name: button
+  - name: food
     uniqueID: 516573433
     locked: 0
-  - name: food
+  - name: button
     uniqueID: 835317129
     locked: 0

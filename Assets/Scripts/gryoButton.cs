@@ -16,6 +16,6 @@ public class gryoButton : MonoBehaviour
     private void OnButtonClick()
     {
         gyroManager.instance.enableGyroInput = !gyroManager.instance.enableGyroInput;
-        Debug.Log("Condition Met: " + gyroManager.instance.enableGyroInput);
+        Debug.Log("Gyro Condition Met: " + gyroManager.instance.enableGyroInput);
     }
 }

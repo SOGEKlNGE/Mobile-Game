@@ -7,7 +7,7 @@ public class FoodSpawner : MonoBehaviour
     public GameObject[] foodPrefabs; 
     public float spawnCooldown = 2f; 
     private float spawnTimer; 
-
+    
     private Camera mainCamera; 
 
     void Start()
@@ -25,6 +25,7 @@ public class FoodSpawner : MonoBehaviour
             SpawnFood(); 
             spawnTimer = spawnCooldown; 
         }
+
     }
 
     void SpawnFood()
@@ -38,6 +39,8 @@ public class FoodSpawner : MonoBehaviour
 
         Instantiate(foodPrefab, spawnPosition, Quaternion.identity);
     }
+
+
 }
 
 //References:

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class movement : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class movement : MonoBehaviour
 
     private void Start()
     {
+      
+
         if (gyroManager.instance != null && gyroManager.instance.enableGyroInput)
         {
             Input.gyro.enabled = true; 
@@ -26,6 +29,10 @@ public class movement : MonoBehaviour
             leftButton.gameObject.SetActive(false);
             downButton.gameObject.SetActive(false);
             upButton.gameObject.SetActive(false);
+        }
+        else if (dragManager.instance != null && dragManager.instance.enableDragInput)
+        {
+            Debug.Log("Movement Drag something happened");
         }
         else
         {
@@ -52,6 +59,7 @@ public class movement : MonoBehaviour
         transform.position += new Vector3(smoothGyroInput.x, smoothGyroInput.y, 0) * gyroSensitivity;
     }
 
+
     public void MoveUp()
     {
         transform.position = new Vector2(transform.position.x, transform.position.y + move);
@@ -71,6 +79,16 @@ public class movement : MonoBehaviour
     {
         transform.position = new Vector2(transform.position.x + move, transform.position.y);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Food")) 
+        {
+            Debug.Log("Collision with Food");
+            Destroy(other.gameObject);
+        }
+    }
+
 
 }
 
