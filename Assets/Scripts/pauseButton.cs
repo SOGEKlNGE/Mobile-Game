@@ -61,3 +61,9 @@ public class PauseGame : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 }
+
+// Reference
+// BMo (2020). 6 Minute PAUSE MENU Unity Tutorial. [online] Available at: https://www.youtube.com/watch?v=9dYDBomQpBQ. [Accessed 20 Oct 2024]
+
+
+

@@ -13,6 +13,7 @@ public class gryoButton : MonoBehaviour
         gyroButton.onClick.AddListener(OnButtonClick);
     }
 
+    // Toggle gyro input
     private void OnButtonClick()
     {
         gyroManager.instance.enableGyroInput = !gyroManager.instance.enableGyroInput;

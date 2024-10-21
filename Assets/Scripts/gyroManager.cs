@@ -10,7 +10,7 @@ public class gyroManager : MonoBehaviour
 
     private void Awake()
     {
-       
+        // sets this as instance if no instance exists
         if (instance == null)
         {
             instance = this;
@@ -18,6 +18,7 @@ public class gyroManager : MonoBehaviour
         }
         else
         {
+            // if instance exists, destroys duplicate
             Destroy(gameObject); 
         }
     }

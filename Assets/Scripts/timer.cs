@@ -12,9 +12,10 @@ public class timer : MonoBehaviour
 
     void Update()
     {
-
+        // Basic time loop
         if (timeCount > 0)
         {
+
             timeCount -= Time.deltaTime;
         }
         else
@@ -41,7 +42,6 @@ public class timer : MonoBehaviour
         // Sets the text GUI to the structured format 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-
     }
     
     public void EndGame()
@@ -49,3 +49,6 @@ public class timer : MonoBehaviour
         gameOverText.SetActive(true);
     }
 }
+
+// Reference
+// AIA (2021). How to EASILY make a TIMER in Unity [online] Available at: https://www.youtube.com/watch?v=27uKJvOpdYw [Accessed 20 Oct 2024]

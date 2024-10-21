@@ -28,6 +28,7 @@ public class movement : MonoBehaviour
 
         mainCamera = Camera.main;
 
+        // if gyro input is enabled via the main menu settings then the movement will be as such. (buttons will be hidden from screen).
         if (gyroManager.instance != null && gyroManager.instance.enableGyroInput)
         {
             Input.gyro.enabled = true; 
@@ -37,9 +38,11 @@ public class movement : MonoBehaviour
             downButton.gameObject.SetActive(false);
             upButton.gameObject.SetActive(false);
         }
+
+        // similar to above code
         else if (dragManager.instance != null && dragManager.instance.enableDragInput)
         {
-            Debug.Log("Movement Drag something happened");
+            Debug.Log("Movement Drag");
         }
         else
         {
@@ -55,12 +58,13 @@ public class movement : MonoBehaviour
         if (gyroManager.instance != null && gyroManager.instance.enableGyroInput)
         {
             GyroControl();
-            Debug.Log("UPDATE MOVEMENT gyro scope something happened");
+            Debug.Log("UPDATE MOVEMENT Gyro input");
         }
 
         else if (dragManager.instance.enableDragInput)
         {
-            HandleDrag(); 
+            HandleDrag();
+            Debug.Log("UPDATE MOVEMENT Drag input");
         }
 
     }
@@ -68,34 +72,43 @@ public class movement : MonoBehaviour
     private void GyroControl()
     {
         Vector3 gyroInput = Input.gyro.rotationRate;
+        // linear interpolation for smooth gyro input
         smoothGyroInput = Vector3.Lerp(smoothGyroInput, gyroInput, gyroSmooth);
+        // adjust objects position based on chosen sensitivity and smooth gyro.
         transform.position += new Vector3(smoothGyroInput.x, smoothGyroInput.y, 0) * gyroSensitivity;
     }
 
     private void HandleDrag()
     {
+        // checks if atleast one touch
         if (Input.touchCount > 0)
         {
+            // gets first input touch
             Touch touch = Input.GetTouch(0);
 
             switch (touch.phase)
             {
                 case TouchPhase.Began:
-                    
+
+                    // calculate the offset between object position and touch position
                     Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
                     dragOffset = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y));
                     break;
 
                 case TouchPhase.Moved:
-                    
+
+                    // update object position based on touch movement and offset
                     Vector3 newPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y)) + dragOffset;
-                    newPosition.z = 0;
+                    
+                    // keep movement 2D.
+                    newPosition.z = 0; 
                     transform.position = newPosition;
                     break;
             }
         }
     }
 
+    // default movement controls
     public void MoveUp()
     {
         transform.position = new Vector2(transform.position.x, transform.position.y + move);
@@ -132,4 +145,6 @@ public class movement : MonoBehaviour
 }
 
 // Reference:
-// Drag input - https://www.youtube.com/watch?v=FdxvTcHJiA8
+// Leonardo, D (2021) Drag and Drop for Mobile & Desktop in Unity [online] Available at: https://www.youtube.com/watch?v=FdxvTcHJiA8 [Accessed 20 Oct 2024]
+// Zotov, A (2018) Unity3D Android Gyroscope Controls (with a helicopter game) [online] Available at: https://www.youtube.com/watch?v=wpSm2O2LIRM [Accessed 20 Oct 2024]
+// LearnWithYas (2024) How to move a 3D object using touch input ( x and y-axis ONLY ) - Unity Mobile [online] Available at: https://www.youtube.com/watch?v=YDSkiQDvYv8 [Accessed 20 Oct 2024]
