@@ -26,7 +26,6 @@ public class movement : MonoBehaviour
 
         mainCamera = Camera.main;
 
-
         if (gyroManager.instance != null && gyroManager.instance.enableGyroInput)
         {
             Input.gyro.enabled = true; 
@@ -56,6 +55,7 @@ public class movement : MonoBehaviour
             GyroControl();
             Debug.Log("UPDATE MOVEMENT gyro scope something happened");
         }
+
         else if (dragManager.instance.enableDragInput)
         {
             HandleDrag(); 
@@ -123,7 +123,7 @@ public class movement : MonoBehaviour
         }
     }
 
-
 }
 
-
+// Reference:
+// Drag input - https://www.youtube.com/watch?v=FdxvTcHJiA8
