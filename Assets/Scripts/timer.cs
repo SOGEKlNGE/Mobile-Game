@@ -8,6 +8,7 @@ public class timer : MonoBehaviour
 {
     public float timeCount = 90;
     public Text timerText;
+    public GameObject gameOverText;
 
     void Update()
     {
@@ -30,7 +31,7 @@ public class timer : MonoBehaviour
         if (timeToDisplay < 0)
         {
             timeToDisplay = 0;
-
+            EndGame();
         }
 
         // Sets the minutes and seconds
@@ -40,5 +41,11 @@ public class timer : MonoBehaviour
         // Sets the text GUI to the structured format 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
+
+    }
+    
+    public void EndGame()
+    {
+        gameOverText.SetActive(true);
     }
 }

@@ -20,6 +20,8 @@ public class movement : MonoBehaviour
     private Vector3 dragOffset;
     private Camera mainCamera;
 
+    public Text scoreText;
+    private float score = 0;
 
     private void Start()
     {
@@ -121,6 +123,9 @@ public class movement : MonoBehaviour
             Debug.Log("Collision with Food");
             Handheld.Vibrate();
             Destroy(other.gameObject);
+
+            score++;
+            scoreText.text = "Score: " + score.ToString();
         }
     }
 
