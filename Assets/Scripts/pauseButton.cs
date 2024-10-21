@@ -13,13 +13,8 @@ public class PauseGame : MonoBehaviour
     public Button restartButton;
     public Button exitButton;
 
-    // Ensure the pause menu is hidden at the start
     void Start()
     {
-        // Ensure the pause menu is hidden at the start
-        pauseMenuPanel.SetActive(false);
-
-        // Assign button listeners
         resumeButton.onClick.AddListener(togglePause);  
         restartButton.onClick.AddListener(Restart);    
         exitButton.onClick.AddListener(Exit);        
@@ -41,14 +36,15 @@ public class PauseGame : MonoBehaviour
         {
             // Resume & Update
             Time.timeScale = 1f;
+
             pauseMenuPanel.SetActive(false);
             isPaused = false;
         }
         else
         {
             // Pause & Update
-            Time.timeScale = 0f;
             pauseMenuPanel.SetActive(true);
+            Time.timeScale = 0f;
             isPaused = true;
         }
     }

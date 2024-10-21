@@ -119,6 +119,7 @@ public class movement : MonoBehaviour
         if (other.gameObject.CompareTag("Food")) 
         {
             Debug.Log("Collision with Food");
+            Handheld.Vibrate();
             Destroy(other.gameObject);
         }
     }
