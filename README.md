@@ -1,15 +1,26 @@
 # Mobile-Game-Documentation
  Mobile game documentation for assignment.
 
-## Overview
+## Overview:
+Genre: ​
+- Arcade​  
+- Casual​
+Objective: ​
+- Catch the required amount of falling food.​
+- Obtain as many coins as possible.​
+- Complete game before timer ends.​
+Obstacle:​
+- Avoid specific falling objects.​
+- Increasing difficulty as game progresses. 
 
-## Features
+
+## Features:
 
 
-### References:
+## References:
 ​
 
-#### Articles​
+### Articles​:
 
 - Vidal, S. (2023). Why is Subway Surfers so popular?  [online] Available at: https://tecnobits.com/en/por-que-subway-surfers-es-tan-popular/ [Accessed 19 Oct. 2024].​
 Knezovic,  A. (2023). Subway Surfers: Lessons from the Record-Breaking Mobile Game. [online] Available at: https://www.blog.udonis.co/mobile-marketing/mobile-games/subway-surfers [Accessed 19 Oct. 2024].​
@@ -22,7 +33,7 @@ Knezovic,  A. (2023). Subway Surfers: Lessons from the Record-Breaking Mobile Ga
 - Newzoo (2024) Newzoo’s Global Games Market Report 2024 [online] Available at: https://resources.newzoo.com/hubfs/Free%20Reports/Games%20Market%20Report%20and%20Forecasts/2024_Newzoo_Free_Global_Games_Market_Report.pdf [Accessed 19 October 2024]​
 - Castellani, P (2024) Mobile Games Ads 2024: Monetization Strategies and User Acquisition Trends [online] https://mapendo.co/blog/mobile-game-ads-revenue-2024 [Accessed 19 October 2024]
 
-#### Images/GUI:​
+### Images/GUI:​
 
 - Dankudraw, n.d. Wood texture background. [online] Available at: https://www.vecteezy.com/vector-art/2193057-wood-texture-background [Accessed 19 October 2024].​
 - PNGimg, n.d. Chef PNG image with transparent background. [online] Available at: https://pngimg.com/image/38930 [Accessed 19 October 2024].​
