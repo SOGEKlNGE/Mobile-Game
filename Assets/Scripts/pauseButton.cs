@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PauseGame : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class PauseGame : MonoBehaviour
     {
         resumeButton.onClick.AddListener(togglePause);  
         restartButton.onClick.AddListener(Restart);    
-        exitButton.onClick.AddListener(Exit);        
+        exitButton.onClick.AddListener(Exit);
     }
 
     void Update()
@@ -27,6 +28,7 @@ public class PauseGame : MonoBehaviour
         {
             togglePause();
         }
+        
     }
 
     public void togglePause()
@@ -37,6 +39,13 @@ public class PauseGame : MonoBehaviour
             // Resume & Update
             Time.timeScale = 1f;
 
+            AudioSource[] audios = FindObjectsOfType<AudioSource>();
+
+            foreach (AudioSource a in audios)
+            {
+                a.Play();
+            }
+
             pauseMenuPanel.SetActive(false);
             isPaused = false;
         }
@@ -44,6 +53,14 @@ public class PauseGame : MonoBehaviour
         {
             // Pause & Update
             pauseMenuPanel.SetActive(true);
+
+            AudioSource[] audios = FindObjectsOfType<AudioSource>();
+
+            foreach (AudioSource a in audios)
+            {
+                a.Pause();
+            }
+
             Time.timeScale = 0f;
             isPaused = true;
         }
