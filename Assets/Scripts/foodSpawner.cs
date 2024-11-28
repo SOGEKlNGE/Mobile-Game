@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FoodSpawner : MonoBehaviour
@@ -7,7 +5,6 @@ public class FoodSpawner : MonoBehaviour
     public GameObject[] foodPrefabs; 
     public float spawnCooldown = 2f; 
     private float spawnTimer; 
-    
     private Camera mainCamera; 
 
     void Start()
@@ -19,13 +16,12 @@ public class FoodSpawner : MonoBehaviour
     void Update()
     {
         // Timer code
-        spawnTimer -= Time.deltaTime; 
+        spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0)
         {
-            SpawnFood(); 
-            spawnTimer = spawnCooldown; 
+            SpawnFood();
+            spawnTimer = spawnCooldown;
         }
-
     }
 
     void SpawnFood()
@@ -42,8 +38,11 @@ public class FoodSpawner : MonoBehaviour
 
         // instantiate the selected food at the spawn position
         Instantiate(foodPrefab, spawnPosition, Quaternion.identity);
+
+
     }
 
+    
 
 }
 
