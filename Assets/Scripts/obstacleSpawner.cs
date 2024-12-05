@@ -15,6 +15,7 @@ public class obstacleSpawner : MonoBehaviour
         mainCamera = Camera.main;
         obstacleTimer = obstacleCooldown;
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +26,8 @@ public class obstacleSpawner : MonoBehaviour
             SpawnObstacle();
             obstacleTimer = obstacleCooldown;
         }
+
+        DestroyObstacleClone();
     }
 
     void SpawnObstacle()
@@ -43,4 +46,21 @@ public class obstacleSpawner : MonoBehaviour
         Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
 
     }
+
+    void DestroyObstacleClone()
+    {
+        Vector2 screenBottom = mainCamera.ScreenToWorldPoint(new Vector3(0, 0, mainCamera.transform.position.z));
+
+        GameObject[] obstacleClones = GameObject.FindGameObjectsWithTag("Obstacle");
+
+        foreach (GameObject obstacle in obstacleClones)
+        {
+            if (obstacle.transform.position.y < screenBottom.y - 1f)
+            {
+                Destroy(obstacle);
+            }
+        }
+    }
+
+
 }

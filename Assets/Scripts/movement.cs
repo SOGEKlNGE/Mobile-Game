@@ -131,13 +131,29 @@ public class movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Food")) 
+        if (other.gameObject.CompareTag("Food"))
         {
             Debug.Log("Collision with Food");
             Handheld.Vibrate();
             Destroy(other.gameObject);
 
             score++;
+            scoreText.text = "Score: " + score.ToString();
+        }
+
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Collision with Obstacle");
+            Handheld.Vibrate();
+            Destroy(other.gameObject);
+
+            score = score - 5;
+            scoreText.text = "Score: " + score.ToString();
+        }
+
+        if (score <= 0)
+        {
+            score = 0;
             scoreText.text = "Score: " + score.ToString();
         }
     }

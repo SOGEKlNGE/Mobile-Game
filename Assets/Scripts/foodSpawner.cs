@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class FoodSpawner : MonoBehaviour
 {
-    public GameObject[] foodPrefabs; 
-    public float spawnCooldown = 2f; 
-    private float spawnTimer; 
-    private Camera mainCamera; 
+    public GameObject[] foodPrefabs;
+    public float spawnCooldown = 2f;
+    private float spawnTimer;
+    private Camera mainCamera;
 
     void Start()
     {
-        mainCamera = Camera.main; 
-        spawnTimer = spawnCooldown; 
+        mainCamera = Camera.main;
+        spawnTimer = spawnCooldown;
     }
 
     void Update()
@@ -22,6 +22,8 @@ public class FoodSpawner : MonoBehaviour
             SpawnFood();
             spawnTimer = spawnCooldown;
         }
+
+        DestroyFoodClone();
     }
 
     void SpawnFood()
@@ -30,7 +32,7 @@ public class FoodSpawner : MonoBehaviour
         Vector2 screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
         // randomly select an X position within the screen bounds
-        float spawnX = Random.Range(-screenBounds.x, screenBounds.x); 
+        float spawnX = Random.Range(-screenBounds.x, screenBounds.x);
         Vector3 spawnPosition = new Vector3(spawnX, screenBounds.y + 1f, 0);
 
         // choose a random food prefab from the array
@@ -42,8 +44,23 @@ public class FoodSpawner : MonoBehaviour
 
     }
 
-    
+    void DestroyFoodClone()
+    {
+        Vector2 screenBottom = mainCamera.ScreenToWorldPoint(new Vector3(0, 0, mainCamera.transform.position.z));
 
+        GameObject[] foodClones = GameObject.FindGameObjectsWithTag("Food");
+
+        foreach (GameObject food in foodClones)
+        {
+            if (food.transform.position.y < screenBottom.y - 1f)
+            {
+                Destroy(food);
+            }
+        }
+
+
+
+    }
 }
 
 //References:
