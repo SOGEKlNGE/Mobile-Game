@@ -23,6 +23,8 @@ public class movement : MonoBehaviour
     public Text scoreText;
     private float score = 0;
 
+    public GameObject popUpPrefab;
+
     private void Start()
     {
 
@@ -55,6 +57,7 @@ public class movement : MonoBehaviour
 
     public void Update()
     {
+
         if (gyroManager.instance != null && gyroManager.instance.enableGyroInput)
         {
             GyroControl();
@@ -99,15 +102,15 @@ public class movement : MonoBehaviour
 
                     // update object position based on touch movement and offset
                     Vector3 newPosition = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y)) + dragOffset;
-                    
+
                     // keep movement 2D.
-                    newPosition.z = 0; 
+                    newPosition.z = 0;
                     transform.position = newPosition;
                     break;
             }
         }
     }
-
+    
     // default movement controls
     public void MoveUp()
     {
@@ -133,12 +136,17 @@ public class movement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Food"))
         {
+
             Debug.Log("Collision with Food");
             Handheld.Vibrate();
             Destroy(other.gameObject);
 
+            PointPopUp("+1", Color.green);
+
             score++;
             scoreText.text = "Score: " + score.ToString();
+
+            
         }
 
         if (other.gameObject.CompareTag("Obstacle"))
@@ -146,6 +154,8 @@ public class movement : MonoBehaviour
             Debug.Log("Collision with Obstacle");
             Handheld.Vibrate();
             Destroy(other.gameObject);
+
+            PointPopUp("-5", Color.red);
 
             score = score - 5;
             scoreText.text = "Score: " + score.ToString();
@@ -156,6 +166,18 @@ public class movement : MonoBehaviour
             score = 0;
             scoreText.text = "Score: " + score.ToString();
         }
+    }
+
+    public void PointPopUp(string text, Color color)
+    {
+        GameObject popup = Instantiate(popUpPrefab, transform.position + Vector3.up, Quaternion.identity);
+        
+        TMP_Text popupText = popup.GetComponentInChildren<TMP_Text>();
+        popupText.text = text;
+        popupText.color = color;
+
+        Destroy(popup, 2f);
+
     }
 
 }

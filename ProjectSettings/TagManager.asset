@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Food
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -50,6 +51,9 @@ TagManager:
     locked: 0
   - name: food
     uniqueID: 516573433
+    locked: 0
+  - name: Obstacle
+    uniqueID: 784974249
     locked: 0
   - name: button
     uniqueID: 835317129
