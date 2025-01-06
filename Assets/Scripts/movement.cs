@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using CandyCoded;
+using CandyCoded.HapticFeedback;
 
 public class movement : MonoBehaviour
 {
@@ -143,7 +145,7 @@ public class movement : MonoBehaviour
         {
 
             Debug.Log("Collision with Food");
-            Handheld.Vibrate();
+            HapticFeedback.LightFeedback();
             Destroy(other.gameObject);
 
             PointPopUp("+1", Color.green);
@@ -157,7 +159,8 @@ public class movement : MonoBehaviour
         if (other.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Collision with Obstacle");
-            Handheld.Vibrate();
+            HapticFeedback.HeavyFeedback();
+
             Destroy(other.gameObject);
 
             PointPopUp("-5", Color.red);

@@ -20,9 +20,9 @@ public class PopUpManager : MonoBehaviour
 
     private void Update()
     {
-       
         transform.position += Vector3.up * moveSpeed * Time.deltaTime;
-        
+
+        Color originalColor = textComponent.color;
         originalColor.a -= Time.deltaTime / fadeDuration;
         textComponent.color = originalColor;
 
