@@ -25,6 +25,11 @@ public class movement : MonoBehaviour
 
     public GameObject popUpPrefab;
 
+    private void Awake()
+    {
+        
+    }
+
     private void Start()
     {
 
@@ -171,13 +176,14 @@ public class movement : MonoBehaviour
     public void PointPopUp(string text, Color color)
     {
         GameObject popup = Instantiate(popUpPrefab, transform.position + Vector3.up, Quaternion.identity);
-        
+
+        Vector3 popupPosition = new Vector3(transform.position.x, transform.position.y + 2, -2);
+        popup.transform.position = popupPosition;
+
         TMP_Text popupText = popup.GetComponentInChildren<TMP_Text>();
         popupText.text = text;
         popupText.color = color;
-
         Destroy(popup, 2f);
-
     }
 
 }

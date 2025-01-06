@@ -11,6 +11,7 @@ public class PopUpManager : MonoBehaviour
     private TMP_Text textComponent;
     private Color originalColor;
 
+
     private void Awake()
     {
         textComponent = GetComponent<TMP_Text>();
@@ -21,7 +22,7 @@ public class PopUpManager : MonoBehaviour
     {
        
         transform.position += Vector3.up * moveSpeed * Time.deltaTime;
-
+        
         originalColor.a -= Time.deltaTime / fadeDuration;
         textComponent.color = originalColor;
 
