@@ -26,6 +26,9 @@ public class movement : MonoBehaviour
     private float score = 0;
 
     public GameObject popUpPrefab;
+    
+    public AudioClip collisionSFX;
+    public AudioSource audioSource;
 
     private void Awake()
     {
@@ -149,9 +152,10 @@ public class movement : MonoBehaviour
             Destroy(other.gameObject);
 
             PointPopUp("+1", Color.green);
+            audioSource.PlayOneShot(collisionSFX);
 
             score++;
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = score.ToString();
 
             
         }
@@ -166,13 +170,13 @@ public class movement : MonoBehaviour
             PointPopUp("-5", Color.red);
 
             score = score - 5;
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = score.ToString();
         }
 
         if (score <= 0)
         {
             score = 0;
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = score.ToString();
         }
     }
 
