@@ -59,10 +59,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     {
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
-            Debug.Log("Unity Ads Rewarded Ad Completed");
-
-            PlayerPrefs.SetInt("Gems", PlayerPrefs.GetInt("Gems", 0) + 10);
-            Debug.Log($"Reward Granted! Total Gems: {PlayerPrefs.GetInt("Gems")}");
+            Debug.LogWarning("Unity Ads Rewarded Ad Completed");
             gemManager.UpdateGemUI();
         }
     }

@@ -7,15 +7,15 @@ using UnityEngine.UI;
 public class GemManager : MonoBehaviour
 {
     [SerializeField] private Text gemText;
-
+    [SerializeField] public int gems = 0;
     private void Start()
     {
-        UpdateGemUI();
+
     }
 
     public void UpdateGemUI()
     {
-        int gems = PlayerPrefs.GetInt("Gems", 0);
-        gemText.text = "Gems: " + gems;
+        gems = gems + 10;
+        gemText.text = "" + gems;
     }
 }
