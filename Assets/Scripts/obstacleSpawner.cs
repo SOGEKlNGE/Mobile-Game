@@ -8,6 +8,7 @@ public class obstacleSpawner : MonoBehaviour
     public float obstacleCooldown = 2f;
     private float obstacleTimer;
     private Camera mainCamera;
+    public float obstacleSpeed = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +45,6 @@ public class obstacleSpawner : MonoBehaviour
 
         // instantiate the selected food at the spawn position
         Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
-
     }
 
     void DestroyObstacleClone()
@@ -55,12 +55,12 @@ public class obstacleSpawner : MonoBehaviour
 
         foreach (GameObject obstacle in obstacleClones)
         {
+            obstacle.transform.Translate(Vector3.down * obstacleSpeed * Time.deltaTime);
+
             if (obstacle.transform.position.y < screenBottom.y - 1f)
             {
                 Destroy(obstacle);
             }
         }
     }
-
-
 }

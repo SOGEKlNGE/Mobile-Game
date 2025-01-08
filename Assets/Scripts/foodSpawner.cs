@@ -6,6 +6,7 @@ public class FoodSpawner : MonoBehaviour
     public float spawnCooldown = 2f;
     private float spawnTimer;
     private Camera mainCamera;
+    public float foodSpeed = 2;
 
     void Start()
     {
@@ -52,6 +53,8 @@ public class FoodSpawner : MonoBehaviour
 
         foreach (GameObject food in foodClones)
         {
+            food.transform.Translate(Vector3.down * foodSpeed * Time.deltaTime);
+
             if (food.transform.position.y < screenBottom.y - 1f)
             {
                 Destroy(food);

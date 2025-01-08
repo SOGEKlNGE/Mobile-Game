@@ -999,10 +999,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodPrefabs:
-  - {fileID: 7084953198901212530, guid: 54a1d8c4f911bc343b28d99029565dfb, type: 3}
-  - {fileID: 6165739507004460219, guid: 87c8263d1a14f2c4cb3c3b84ff779d8b, type: 3}
+  - {fileID: 5561051520058662648, guid: ec5ee5beb75605743ab3f907d63b910b, type: 3}
+  - {fileID: 6820612648370904820, guid: f9bd0c780a3f33242aaa8d69c1e38f95, type: 3}
   - {fileID: 3924233486339235345, guid: dcf687f4d04ab6746adacf0ebd60cac2, type: 3}
-  spawnCooldown: 0.5
+  spawnCooldown: 0.8
+  foodSpeed: 3
 --- !u!224 &640125390
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3075,7 +3076,7 @@ GameObject:
   - component: {fileID: 1993831907}
   m_Layer: 0
   m_Name: ObstacleSpawner
-  m_TagString: Obstacle
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3112,10 +3113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefabs:
-  - {fileID: 4987964447950902431, guid: 50554334ba109854ca55627db8eb6972, type: 3}
-  - {fileID: 4987964447950902431, guid: 50554334ba109854ca55627db8eb6972, type: 3}
-  - {fileID: 4987964447950902431, guid: 50554334ba109854ca55627db8eb6972, type: 3}
-  obstacleCooldown: 2
+  - {fileID: 7084953198901212530, guid: 54a1d8c4f911bc343b28d99029565dfb, type: 3}
+  - {fileID: 7828592546183035341, guid: 103243ba8a548a741bb9b9e17b31a536, type: 3}
+  - {fileID: 6165739507004460219, guid: 87c8263d1a14f2c4cb3c3b84ff779d8b, type: 3}
+  obstacleCooldown: 3
+  obstacleSpeed: 8
 --- !u!114 &1993831907
 MonoBehaviour:
   m_ObjectHideFlags: 0

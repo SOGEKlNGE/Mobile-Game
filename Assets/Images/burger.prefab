@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8891506020230545888}
   m_Layer: 0
   m_Name: burger
-  m_TagString: Food
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 516573433
-  m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingLayerID: 784974249
+  m_SortingLayer: 4
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: ef44dd8a3ebda7d40b24b9dbea1c01b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -145,16 +145,16 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0021213293, y: -0.010526955}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1, y: 1.82}
+    oldSize: {x: 1.5, y: 1.5}
     newSize: {x: 2.1, y: 1.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1, y: 1.82}
+  m_Size: {x: 1.393538, y: 1.385137}
   m_EdgeRadius: 0
