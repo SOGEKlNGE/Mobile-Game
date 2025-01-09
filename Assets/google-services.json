@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "609733567924",
+    "project_id": "food-frenzy-7a34e",
+    "storage_bucket": "food-frenzy-7a34e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609733567924:android:8053ebfc65c68b5b64fee1",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.com.unity.template.mobile2D"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHme1Ptpxwv39VPLhEggQEvyaYu7yqkHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
