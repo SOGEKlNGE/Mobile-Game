@@ -7,9 +7,18 @@ public class FirebaseAuthTester : MonoBehaviour
 {
     public InputField emailInputField; 
     public InputField passwordInputField;
-    public Text feedbackText; 
+    public Text feedbackText;
+
+    public bool isLoggedIn = false;
+
+    public GameObject LoginPanel;
+    public GameObject AdsPanel;
+    public GameObject SettingsPanel;
+    public GameObject mainMenuButtons;
+    public GameObject mainMenuBackground;
 
     private FirebaseAuth auth;
+
 
     void Start()
     {
@@ -28,6 +37,18 @@ public class FirebaseAuthTester : MonoBehaviour
         });
     }
 
+    private void Update()
+    {
+        if (isLoggedIn)
+        {
+            LoginPanel.SetActive(false);
+            AdsPanel.SetActive(true);
+            SettingsPanel.SetActive(true);
+            mainMenuButtons.SetActive(true);
+            mainMenuBackground.SetActive(true);
+        }
+    }
+
     public void RegisterUser()
     {
         string email = emailInputField.text;
@@ -37,7 +58,7 @@ public class FirebaseAuthTester : MonoBehaviour
         {
             if (task.IsCompleted && !task.IsFaulted)
             {
-                FirebaseUser newUser = task.Result.User; // Extract the FirebaseUser from AuthResult
+                FirebaseUser newUser = task.Result.User;
                 Debug.LogWarning("Registration successful! Welcome, " + newUser.Email /*Color.green*/);
             }
             else
@@ -56,8 +77,9 @@ public class FirebaseAuthTester : MonoBehaviour
         {
             if (task.IsCompleted && !task.IsFaulted)
             {
-                FirebaseUser user = task.Result.User; // Extract the FirebaseUser from AuthResult
+                FirebaseUser user = task.Result.User; 
                 Debug.LogWarning("Login successful! Welcome back, " + user.Email /*Color.green*/);
+                isLoggedIn = true;
             }
             else
             {
