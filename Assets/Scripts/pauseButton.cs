@@ -39,12 +39,12 @@ public class PauseGame : MonoBehaviour
             // Resume & Update
             Time.timeScale = 1f;
 
-            AudioSource[] audios = FindObjectsOfType<AudioSource>();
+            //AudioSource[] audios = FindObjectsOfType<AudioSource>();
 
-            foreach (AudioSource a in audios)
-            {
-                a.Play();
-            }
+            //foreach (AudioSource a in audios)
+            //{
+            //    a.Play();
+            //}
 
             pauseMenuPanel.SetActive(false);
             isPaused = false;
@@ -54,12 +54,12 @@ public class PauseGame : MonoBehaviour
             // Pause & Update
             pauseMenuPanel.SetActive(true);
 
-            AudioSource[] audios = FindObjectsOfType<AudioSource>();
+            //AudioSource[] audios = FindObjectsOfType<AudioSource>();
 
-            foreach (AudioSource a in audios)
-            {
-                a.Pause();
-            }
+            //foreach (AudioSource a in audios)
+            //{
+            //    a.Pause();
+            //}
 
             Time.timeScale = 0f;
             isPaused = true;

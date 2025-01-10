@@ -1448,7 +1448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &657246627
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1777,8 +1777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c22f2f96b978574c8af5e0664af99dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _androidAdUnitId: Interstitial_Android
-  _iOsAdUnitId: Interstitial_iOS
+  _androidAdUnitId: 5734865
+  _iOsAdUnitId: 5734864
 --- !u!1 &1005482793
 GameObject:
   m_ObjectHideFlags: 0
