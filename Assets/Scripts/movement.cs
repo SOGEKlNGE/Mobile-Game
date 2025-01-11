@@ -23,7 +23,7 @@ public class movement : MonoBehaviour
     private Camera mainCamera;
 
     public Text scoreText;
-    private float score = 0;
+    public float score = 0;
 
     public GameObject popUpPrefab;
     
@@ -156,8 +156,6 @@ public class movement : MonoBehaviour
 
             score++;
             scoreText.text = score.ToString();
-
-            
         }
 
         if (other.gameObject.CompareTag("Obstacle"))

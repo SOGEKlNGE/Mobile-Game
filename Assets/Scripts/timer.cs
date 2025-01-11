@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class timer : MonoBehaviour
 {
     public float timeCount = 90;
     public Text timerText;
-    public GameObject gameOverText;
+
+    public GameObject loseScreen;
+    public GameObject winScreen;
+    public movement movementScript;
+
+    public Text finalScoreText;
+    private float finalScore;
 
     void Update()
     {
@@ -24,6 +32,23 @@ public class timer : MonoBehaviour
         }
 
         DisplayTime(timeCount);
+
+        //if (time <= 0 && movementScript.score < 40)
+        //{
+        //    DisplayLoseScreen();
+        //}
+
+        if (movementScript.score >= 40 && timeCount <= 0)
+        {
+            DisplayWinScreen();
+        }
+        else if (movementScript.score < 40 && timeCount <= 0)
+        {
+            DisplayLoseScreen();
+        }
+
+        Debug.LogWarning("Score: " + movementScript.score);
+        Debug.LogWarning("Time Count: " + timeCount);
     }
 
     void DisplayTime(float timeToDisplay)
@@ -32,7 +57,6 @@ public class timer : MonoBehaviour
         if (timeToDisplay < 0)
         {
             timeToDisplay = 0;
-            EndGame();
         }
 
         // Sets the minutes and seconds
@@ -41,12 +65,31 @@ public class timer : MonoBehaviour
 
         // Sets the text GUI to the structured format 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-
     }
-    
-    public void EndGame()
+
+    public void DisplayLoseScreen()
     {
-        gameOverText.SetActive(true);
+        loseScreen.SetActive(true);
+        finalScoreText.gameObject.SetActive(true);
+    }
+
+    public void DisplayWinScreen()
+    {
+        finalScore = movementScript.score;
+        finalScoreText.text = finalScore.ToString();
+        Debug.LogWarning("Final Score:" + finalScore);
+        winScreen.SetActive(true);
+        finalScoreText.gameObject.SetActive(true);
+    }
+
+    private void PlayAgain()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
 
