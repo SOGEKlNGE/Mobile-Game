@@ -61,3 +61,12 @@ TagManager:
   - name: GUI
     uniqueID: 2291303341
     locked: 0
+  - name: Text
+    uniqueID: 3558916565
+    locked: 0
+  - name: buttons2
+    uniqueID: 2068808895
+    locked: 0
+  - name: aa
+    uniqueID: 2205575091
+    locked: 0

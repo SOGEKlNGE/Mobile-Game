@@ -15,8 +15,22 @@ public class timer : MonoBehaviour
     public GameObject winScreen;
     public movement movementScript;
 
+    public Button playAgain;
+    public Button returnToMenu;
+
     public Text finalScoreText;
     private float finalScore;
+
+    private void Awake()
+    {
+        Time.timeScale = 1;
+        timeCount = 90;
+    }
+
+    void Start()
+    {
+        //Debug.LogWarning($"Play Again Button Active: {playAgain.gameObject.activeSelf}");
+    }
 
     void Update()
     {
@@ -41,14 +55,23 @@ public class timer : MonoBehaviour
         if (movementScript.score >= 40 && timeCount <= 0)
         {
             DisplayWinScreen();
+            DisplayFinalScore();
+            DisplayButtons();
+
+            Debug.LogWarning("Score: " + movementScript.score);
+            Debug.LogWarning("Time Count: " + timeCount);
         }
         else if (movementScript.score < 40 && timeCount <= 0)
         {
             DisplayLoseScreen();
+            DisplayFinalScore();
+            DisplayButtons();
+
+            Debug.LogWarning("Score: " + movementScript.score);
+            Debug.LogWarning("Time Count: " + timeCount);
         }
 
-        Debug.LogWarning("Score: " + movementScript.score);
-        Debug.LogWarning("Time Count: " + timeCount);
+        Debug.LogWarning($"AAAAAAAAAAAAAAA: {playAgain.gameObject.activeSelf}");
     }
 
     void DisplayTime(float timeToDisplay)
@@ -57,6 +80,7 @@ public class timer : MonoBehaviour
         if (timeToDisplay < 0)
         {
             timeToDisplay = 0;
+            Time.timeScale = 0;
         }
 
         // Sets the minutes and seconds
@@ -75,21 +99,35 @@ public class timer : MonoBehaviour
 
     public void DisplayWinScreen()
     {
-        finalScore = movementScript.score;
-        finalScoreText.text = finalScore.ToString();
         Debug.LogWarning("Final Score:" + finalScore);
         winScreen.SetActive(true);
+    }
+
+    private void DisplayFinalScore()
+    {
+        finalScore = movementScript.score;
+        finalScoreText.text = finalScore.ToString();
         finalScoreText.gameObject.SetActive(true);
     }
 
-    private void PlayAgain()
+    public void PlayAgain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.LogWarning("BUTTON CLICKED play again ");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void ReturnToMenu()
+    public void ReturnToMenu()
     {
-        SceneManager.LoadScene(0);
+        Debug.LogWarning("BUTTON CLICKED MENU ");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void DisplayButtons()
+    {
+        playAgain.gameObject.SetActive(true);
+        playAgain.interactable = true;
+
+        returnToMenu.gameObject.SetActive(true);
     }
 }
 
