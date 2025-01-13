@@ -14,6 +14,9 @@ With vibrant visuals, engaging gameplay, and features like haptic feedback, rewa
 ### Methods to download/run the game:
 - Open the "Scene" folder in located in the "Assets" folder and click on any ".scene" file.
 
+- Built for Android
+- Main tests were conducted on Samsung Galaxy s10
+
 ## <ins> Overview:
 ### Genre: ​Arcade​, Casual​
 
