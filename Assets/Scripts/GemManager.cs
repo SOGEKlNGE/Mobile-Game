@@ -24,7 +24,6 @@ public class GemManager : MonoBehaviour
     public void UpdateGemUI()
     {
         gemText.text = gems.ToString();
-
         PlayerPrefs.SetInt("Gems", gems);
     }
 }

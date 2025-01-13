@@ -22,12 +22,7 @@ public class PauseGame : MonoBehaviour
     }
 
     void Update()
-    {
-        // Check for shake input
-        if (Input.acceleration.magnitude > 2.2f)
-        {
-            togglePause();
-        }
+    { 
         
     }
 
