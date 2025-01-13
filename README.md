@@ -53,41 +53,41 @@ The point pop-up system was finalized, with color customization and haptic feedb
 
 ### Game Screenshots:
 Screenshots:
-Main Level:
+- #### Main Level:
 ![image](https://github.com/user-attachments/assets/098936e6-b438-4e5d-911d-f34cc6023c9d)
 
-Login (Firebase):
+- #### Login (Firebase):
 ![image](https://github.com/user-attachments/assets/163e35fd-a9f1-48b0-8025-139b72dbb980)
 ![image](https://github.com/user-attachments/assets/3683b7ef-2cb3-438f-97cb-090d383acf59)
 ![image](https://github.com/user-attachments/assets/4bf68ae3-17e9-4307-8172-d2f0f5657b91)
 
-Main Menu:
+- #### Main Menu:
 ![image](https://github.com/user-attachments/assets/71aa175f-eb1c-4dc2-a617-e1dc8bcb0ac7)
 
-Google play:
+- #### Google play:
 ![image](https://github.com/user-attachments/assets/6c84a57d-56a4-4fde-b5f2-8d13d52617c0)
 ![image](https://github.com/user-attachments/assets/64ece9c3-3376-4e07-82fe-9a32bd6df607)
 ![image](https://github.com/user-attachments/assets/29d07cef-2f21-4632-a913-12cc11f04e23)
 
-Movement:
-Arrow keys:
+ #### Movement:
+- #### Arrow keys:
 ![image](https://github.com/user-attachments/assets/a1eddbbf-5305-4af1-b9dc-4a06b8baf664)
 
-Gyro and Drag (Settings in Main Menu):
+- #### Gyro and Drag (Settings in Main Menu):
 ![image](https://github.com/user-attachments/assets/c769d79e-10cb-478c-8cf3-5b885bc01944)
 
-Code:
+- #### Code:
 ![image](https://github.com/user-attachments/assets/7442a713-9486-42e5-817c-7838f8c8d161)
 ![image](https://github.com/user-attachments/assets/a3821ef1-8917-437c-9e6b-04fa2893ab9c)
 
-Rewarded Ads
+- #### Rewarded Ads
 ![image](https://github.com/user-attachments/assets/58d8d598-6c6f-40a4-8062-e95128e1c686)
 
-Code:
+- #### Code:
 ![image](https://github.com/user-attachments/assets/bf43390a-56ab-4a6b-8f60-204801968dc9)
 ![image](https://github.com/user-attachments/assets/594d2e97-ea26-48e2-b1d5-8231dd0a6846)
 
-Powerup, Mute & Pause:
+- #### Powerup, Mute & Pause:
 ![image](https://github.com/user-attachments/assets/ec494e11-0c3a-4f82-a096-5f0a80a49638)
 
 ## <ins> References:
