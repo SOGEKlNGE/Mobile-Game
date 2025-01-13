@@ -6,6 +6,8 @@ With vibrant visuals, engaging gameplay, and features like haptic feedback, rewa
 ## <ins> Notice
 ### Links:
 - Internal Play Test: https://play.google.com/apps/internaltest/4700805371037218244
+- Google Play Link: https://play.google.com/store/apps/details?id=com.skzeesh.foodfrenzy&hl=en-US&ah=RTA1SaQx38me7AUyOcNbmGss9zg
+
 - Onedrive link: https://mailbcuac-my.sharepoint.com/:u:/g/personal/mohammed_zeeshan3_mail_bcu_ac_uk/EfjOW1gZuTFFvzoG2npXrIABpBQAWOk8SaT2217eugen7Q?e=ijdAuh
 - GitHub Link: https://github.com/SOGEKlNGE/Mobile-Game.git
 
