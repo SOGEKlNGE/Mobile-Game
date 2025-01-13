@@ -3,6 +3,15 @@ Food Frenzy is a fast-paced 2D casual action game where players collect healthy 
 
 With vibrant visuals, engaging gameplay, and features like haptic feedback, rewarded ads, and score-based challenges, Food Frenzy provides a fun and interactive experience for players of all ages.
 
+## <ins> Notice
+### Links:
+- Internal Play Test: https://play.google.com/apps/internaltest/4700805371037218244
+- Onedrive link: https://mailbcuac-my.sharepoint.com/:u:/g/personal/mohammed_zeeshan3_mail_bcu_ac_uk/EfjOW1gZuTFFvzoG2npXrIABpBQAWOk8SaT2217eugen7Q?e=ijdAuh
+- GitHub Link
+
+### Methods to download/run the game:
+- Open the "Scene" folder in located in the "Assets" folder and click on any ".scene" file.
+
 ## <ins> Overview:
 ### Genre: ​Arcade​, Casual​
 
@@ -14,11 +23,12 @@ With vibrant visuals, engaging gameplay, and features like haptic feedback, rewa
 ### Key Features:
 - Touchscreen Input - Drag input movement
 - Gyroscope - Gyro input movement
-- Accelerometer - Shake Input
+- Accelerometer - Shake input powerup
 - Mute and Unmute UI
 - Pause UI
-- Advertisments
+- Rewarded Advertisments
 - Login System
+
 
 ## <ins> Monthly Log
 
@@ -39,6 +49,46 @@ Obstacles were successfully implemented, deducting 5 points upon collision, with
 ### January:
 #### Final Touch Ups - Advanced Gameplay Features & Enhancements.
 The point pop-up system was finalized, with color customization and haptic feedback added using the HapticFeedback GitHub library. Rewarded ads were successfully implemented, enabling players to earn gems for watching videos. Sound effects for collisions were integrated, using 8-bit assets for a retro aesthetic. A new food theme was introduced, featuring healthy foods such as strawberries, bananas, and apples that award points, while unhealthy foods like burgers, pizza, and steak served as obstacles that deduct points. Collision mechanics were rebalanced for improved gameplay experience. GUI updates included the addition of mute/unmute buttons for music and a Firebase-authenticated login menu, streamlining user access. Endgame logic was refined to display a win for scores of 40 or higher when the timer ends, and a loss for scores below 40. The game was submitted for internal testing on Google Play.
+
+
+### Game Screenshots:
+Screenshots:
+Main Level:
+![image](https://github.com/user-attachments/assets/098936e6-b438-4e5d-911d-f34cc6023c9d)
+
+Login (Firebase):
+![image](https://github.com/user-attachments/assets/163e35fd-a9f1-48b0-8025-139b72dbb980)
+![image](https://github.com/user-attachments/assets/3683b7ef-2cb3-438f-97cb-090d383acf59)
+![image](https://github.com/user-attachments/assets/4bf68ae3-17e9-4307-8172-d2f0f5657b91)
+
+Main Menu:
+![image](https://github.com/user-attachments/assets/71aa175f-eb1c-4dc2-a617-e1dc8bcb0ac7)
+
+Google play:
+![image](https://github.com/user-attachments/assets/6c84a57d-56a4-4fde-b5f2-8d13d52617c0)
+![image](https://github.com/user-attachments/assets/64ece9c3-3376-4e07-82fe-9a32bd6df607)
+![image](https://github.com/user-attachments/assets/29d07cef-2f21-4632-a913-12cc11f04e23)
+
+Movement:
+Arrow keys:
+![image](https://github.com/user-attachments/assets/a1eddbbf-5305-4af1-b9dc-4a06b8baf664)
+
+Gyro and Drag (Settings in Main Menu):
+![image](https://github.com/user-attachments/assets/c769d79e-10cb-478c-8cf3-5b885bc01944)
+
+Code:
+![image](https://github.com/user-attachments/assets/7442a713-9486-42e5-817c-7838f8c8d161)
+![image](https://github.com/user-attachments/assets/a3821ef1-8917-437c-9e6b-04fa2893ab9c)
+
+Rewarded Ads
+![image](https://github.com/user-attachments/assets/58d8d598-6c6f-40a4-8062-e95128e1c686)
+
+Code:
+![image](https://github.com/user-attachments/assets/bf43390a-56ab-4a6b-8f60-204801968dc9)
+![image](https://github.com/user-attachments/assets/594d2e97-ea26-48e2-b1d5-8231dd0a6846)
+
+Powerup, Mute & Pause:
+![image](https://github.com/user-attachments/assets/ec494e11-0c3a-4f82-a096-5f0a80a49638)
 
 ## <ins> References:
 
