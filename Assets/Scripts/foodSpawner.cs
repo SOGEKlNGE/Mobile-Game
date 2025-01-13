@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class FoodSpawner : MonoBehaviour
 {
+    // Array to hold different food prefab sprites
     public GameObject[] foodPrefabs;
+
+    // Time interval between food spawns and speed
     public float spawnCooldown = 2f;
     private float spawnTimer;
-    private Camera mainCamera;
     public float foodSpeed = 2;
+
+    // Camera reference to get screen boundaries
+    private Camera mainCamera;
 
     void Start()
     {
@@ -20,10 +25,12 @@ public class FoodSpawner : MonoBehaviour
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0)
         {
+            // Spawn food and reset the timer
             SpawnFood();
             spawnTimer = spawnCooldown;
         }
 
+        // Move the food clones and destroy them if they go out of screen
         DestroyFoodClone();
     }
 
@@ -47,14 +54,18 @@ public class FoodSpawner : MonoBehaviour
 
     void DestroyFoodClone()
     {
+        // Get the bottom of the screen in world space
         Vector2 screenBottom = mainCamera.ScreenToWorldPoint(new Vector3(0, 0, mainCamera.transform.position.z));
 
         GameObject[] foodClones = GameObject.FindGameObjectsWithTag("Food");
 
+        // Iterate through each food clone
         foreach (GameObject food in foodClones)
         {
+            // Move each food clone downward based on the foodSpeed
             food.transform.Translate(Vector3.down * foodSpeed * Time.deltaTime);
 
+            // If food moves below the screen, destroy it
             if (food.transform.position.y < screenBottom.y - 1f)
             {
                 Destroy(food);

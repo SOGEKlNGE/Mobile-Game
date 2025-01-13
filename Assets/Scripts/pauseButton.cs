@@ -16,6 +16,7 @@ public class PauseGame : MonoBehaviour
 
     void Start()
     {
+        // Button listeners
         resumeButton.onClick.AddListener(togglePause);  
         restartButton.onClick.AddListener(Restart);    
         exitButton.onClick.AddListener(Exit);
@@ -31,44 +32,32 @@ public class PauseGame : MonoBehaviour
         // Check if the game is paused
         if (isPaused)
         {
-            // Resume & Update
+            // Resume the game by unpausing time and hiding the pause menu
             Time.timeScale = 1f;
-
-            //AudioSource[] audios = FindObjectsOfType<AudioSource>();
-
-            //foreach (AudioSource a in audios)
-            //{
-            //    a.Play();
-            //}
-
             pauseMenuPanel.SetActive(false);
             isPaused = false;
         }
         else
         {
-            // Pause & Update
+            // Pause the game by stopping time and showing the pause menu
             pauseMenuPanel.SetActive(true);
-
-            //AudioSource[] audios = FindObjectsOfType<AudioSource>();
-
-            //foreach (AudioSource a in audios)
-            //{
-            //    a.Pause();
-            //}
-
             Time.timeScale = 0f;
             isPaused = true;
         }
     }
 
     public void Restart()
-    { 
-        Time.timeScale = 1f; 
+    {
+        // Reset time scale
+        Time.timeScale = 1f;
+
+        // Reload the current active scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Exit()
     {
+        // Reset time scale
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }

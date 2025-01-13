@@ -49,14 +49,19 @@ public class obstacleSpawner : MonoBehaviour
 
     void DestroyObstacleClone()
     {
+        // Get the screen's bottom boundary in world coordinates
         Vector2 screenBottom = mainCamera.ScreenToWorldPoint(new Vector3(0, 0, mainCamera.transform.position.z));
 
+        // Find all active obstacle objects in the scene
         GameObject[] obstacleClones = GameObject.FindGameObjectsWithTag("Obstacle");
 
+        // Loop through each obstacle to move it and check for destruction
         foreach (GameObject obstacle in obstacleClones)
         {
+            // Move the obstacle downward based on its speed
             obstacle.transform.Translate(Vector3.down * obstacleSpeed * Time.deltaTime);
 
+            // Destroy the obstacle if it moves below the screen
             if (obstacle.transform.position.y < screenBottom.y - 1f)
             {
                 Destroy(obstacle);

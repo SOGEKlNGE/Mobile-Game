@@ -5,20 +5,22 @@ using Firebase.Auth;
 
 public class FirebaseAuthTester : MonoBehaviour
 {
-    public InputField emailInputField; 
-    public InputField passwordInputField;
-    public Text feedbackText;
-
-    public bool isLoggedIn = false;
-
+    // [GUI]
     public GameObject LoginPanel;
     public GameObject AdsPanel;
     public GameObject SettingsPanel;
     public GameObject mainMenuButtons;
     public GameObject mainMenuBackground;
+    public Text feedbackText;
 
+    // [Player Input]
+    public InputField emailInputField;
+    public InputField passwordInputField;
+
+    // [Flags]
     private bool? regSuccess;
     private bool? loginSuccess;
+    public bool isLoggedIn = false;
 
     private FirebaseAuth auth;
 
@@ -30,15 +32,11 @@ public class FirebaseAuthTester : MonoBehaviour
             if (task.Result == DependencyStatus.Available)
             {
                 auth = FirebaseAuth.DefaultInstance;
-                Debug.LogWarning("Firebase initialized successfully." /* Color.green*/);
-                //feedbackText.text = "Firebase initialized successfully.";
-                //feedbackText.color = Color.green;
+                Debug.LogWarning("Firebase initialized successfully.");
             }
             else
             {
-                Debug.LogWarning("Could not resolve Firebase dependencies: " + task.Result /*Color.red*/);
-                //feedbackText.text = "Could not resolve Firebase dependencies: " + task.Result;
-                //feedbackText.color = Color.red;
+                Debug.LogWarning("Could not resolve Firebase dependencies: " + task.Result);
             }
         });
 
@@ -46,6 +44,7 @@ public class FirebaseAuthTester : MonoBehaviour
 
     private void Update()
     {
+        // Show and Hide UI panels based on login status
         if (isLoggedIn)
         {
             LoginPanel.SetActive(false);
@@ -55,6 +54,7 @@ public class FirebaseAuthTester : MonoBehaviour
             mainMenuBackground.SetActive(true);
         }
 
+        // Display feedback text for registration status
         if (regSuccess == true)
         {
             feedbackText.text = "Registration successful! Welcome";
@@ -67,6 +67,7 @@ public class FirebaseAuthTester : MonoBehaviour
             feedbackText.color = Color.red;
         }
 
+        // Display feedback text for login status
         if (loginSuccess == true)
         {
             feedbackText.text = "Login successful! Welcome back";
@@ -92,12 +93,12 @@ public class FirebaseAuthTester : MonoBehaviour
             if (task.IsCompleted && !task.IsFaulted)
             {
                 FirebaseUser newUser = task.Result.User;
-                Debug.LogWarning("Registration successful! Welcome," + newUser.Email); /*Color.green*/
+                Debug.LogWarning("Registration successful! Welcome," + newUser.Email);
                 regSuccess = true;
             }
             else
             {
-                Debug.LogWarning("Registration failed: " + task.Exception.GetBaseException().Message /*Color.red*/);
+                Debug.LogWarning("Registration failed: " + task.Exception.GetBaseException().Message);
                 regSuccess = false;
             }
         });

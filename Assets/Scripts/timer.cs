@@ -11,15 +11,19 @@ public class timer : MonoBehaviour
     public float timeCount = 90;
     public Text timerText;
 
+    // End game condition screen
     public GameObject loseScreen;
     public GameObject winScreen;
-    public movement movementScript;
 
     public Button playAgain;
     public Button returnToMenu;
 
+    // Score display in the end screens
     public Text finalScoreText;
     private float finalScore;
+
+    public movement movementScript;
+
 
     private void Awake()
     {
@@ -29,7 +33,6 @@ public class timer : MonoBehaviour
 
     void Start()
     {
-        //Debug.LogWarning($"Play Again Button Active: {playAgain.gameObject.activeSelf}");
     }
 
     void Update()
@@ -45,13 +48,10 @@ public class timer : MonoBehaviour
             timeCount = 0;
         }
 
+        // Update the timer display
         DisplayTime(timeCount);
 
-        //if (time <= 0 && movementScript.score < 40)
-        //{
-        //    DisplayLoseScreen();
-        //}
-
+        // Check for win or lose conditions based on score and timer
         if (movementScript.score >= 40 && timeCount <= 0)
         {
             DisplayWinScreen();
@@ -104,6 +104,7 @@ public class timer : MonoBehaviour
 
     private void DisplayFinalScore()
     {
+        // Store and display the final score
         finalScore = movementScript.score;
         finalScoreText.text = finalScore.ToString();
         finalScoreText.gameObject.SetActive(true);
@@ -123,9 +124,9 @@ public class timer : MonoBehaviour
 
     public void DisplayButtons()
     {
+        // Show and enable the play again and return to menu buttons
         playAgain.gameObject.SetActive(true);
         playAgain.interactable = true;
-
         returnToMenu.gameObject.SetActive(true);
     }
 }

@@ -8,25 +8,32 @@ using CandyCoded.HapticFeedback;
 
 public class movement : MonoBehaviour
 {
+    // Speed of movement
     public float move = 2f;
 
+    // [Movement Buttons]
     public Button upButton;
     public Button downButton;
     public Button leftButton;
     public Button rightButton;
 
+    // Smooth gyro input for gradual movement
     private Vector3 smoothGyroInput;  
     public float gyroSensitivity = 0.5f;  
     public float gyroSmooth = 0.1f;
 
+    // Offset for drag movement
     private Vector3 dragOffset;
     private Camera mainCamera;
 
+    // Score control
     public Text scoreText;
     public float score = 0;
 
+    // Point pop-up
     public GameObject popUpPrefab;
     
+    // [Sound]
     public AudioClip collisionSFX;
     public AudioSource audioSource;
 
@@ -58,6 +65,7 @@ public class movement : MonoBehaviour
         }
         else
         {
+            // Button click listeners for default movement
             upButton.onClick.AddListener(MoveUp);
             downButton.onClick.AddListener(MoveDown);
             leftButton.onClick.AddListener(MoveLeft);
@@ -67,13 +75,14 @@ public class movement : MonoBehaviour
 
     public void Update()
     {
-
+        // Handle gyro movement if enabled
         if (gyroManager.instance != null && gyroManager.instance.enableGyroInput)
         {
             GyroControl();
             Debug.Log("UPDATE MOVEMENT Gyro input");
         }
 
+        // Handle drag movement if enabled
         else if (dragManager.instance.enableDragInput)
         {
             HandleDrag();
@@ -84,6 +93,7 @@ public class movement : MonoBehaviour
 
     private void GyroControl()
     {
+        // Get gyroscope input
         Vector3 gyroInput = Input.gyro.rotationRate;
         // linear interpolation for smooth gyro input
         smoothGyroInput = Vector3.Lerp(smoothGyroInput, gyroInput, gyroSmooth);
@@ -144,6 +154,7 @@ public class movement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Handles collision with food
         if (other.gameObject.CompareTag("Food"))
         {
 
@@ -158,6 +169,7 @@ public class movement : MonoBehaviour
             scoreText.text = score.ToString();
         }
 
+        // Handles collision with obstacles
         if (other.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Collision with Obstacle");
@@ -180,14 +192,19 @@ public class movement : MonoBehaviour
 
     public void PointPopUp(string text, Color color)
     {
+        // Instantiate pop-up prefab for feedback
         GameObject popup = Instantiate(popUpPrefab, transform.position + Vector3.up, Quaternion.identity);
 
+        // Sets the osition of the pop-up slightly above the player
         Vector3 popupPosition = new Vector3(transform.position.x, transform.position.y + 2, -2);
         popup.transform.position = popupPosition;
 
+        // Set the text and color of the pop-up
         TMP_Text popupText = popup.GetComponentInChildren<TMP_Text>();
         popupText.text = text;
         popupText.color = color;
+
+        // Destroy the pop-up after 2 seconds
         Destroy(popup, 2f);
     }
 
