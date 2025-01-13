@@ -7,7 +7,7 @@ With vibrant visuals, engaging gameplay, and features like haptic feedback, rewa
 ### Links:
 - Internal Play Test: https://play.google.com/apps/internaltest/4700805371037218244
 - Onedrive link: https://mailbcuac-my.sharepoint.com/:u:/g/personal/mohammed_zeeshan3_mail_bcu_ac_uk/EfjOW1gZuTFFvzoG2npXrIABpBQAWOk8SaT2217eugen7Q?e=ijdAuh
-- GitHub Link
+- GitHub Link: https://github.com/SOGEKlNGE/Mobile-Game.git
 
 ### Methods to download/run the game:
 - Open the "Scene" folder in located in the "Assets" folder and click on any ".scene" file.
@@ -54,33 +54,49 @@ The point pop-up system was finalized, with color customization and haptic feedb
 ### Game Screenshots:
 Screenshots:
 - #### Main Level:
+A look at the main gameplay area where players collect food and avoid obstacles.
+
 ![image](https://github.com/user-attachments/assets/098936e6-b438-4e5d-911d-f34cc6023c9d)
 
 - #### Login (Firebase):
+Seamless integration using Firebase-powered login screen to securely authenticate players via Email.
+
 ![image](https://github.com/user-attachments/assets/163e35fd-a9f1-48b0-8025-139b72dbb980)
 ![image](https://github.com/user-attachments/assets/3683b7ef-2cb3-438f-97cb-090d383acf59)
 ![image](https://github.com/user-attachments/assets/4bf68ae3-17e9-4307-8172-d2f0f5657b91)
 
 - #### Main Menu:
+Stylish main menu offering easy navigation to settings, levels, and features. Consistent theme across all GUI.
+
 ![image](https://github.com/user-attachments/assets/71aa175f-eb1c-4dc2-a617-e1dc8bcb0ac7)
 
 - #### Google play:
+Game ready for Google Play with internal testing for players with the link.
+
 ![image](https://github.com/user-attachments/assets/6c84a57d-56a4-4fde-b5f2-8d13d52617c0)
 ![image](https://github.com/user-attachments/assets/64ece9c3-3376-4e07-82fe-9a32bd6df607)
 ![image](https://github.com/user-attachments/assets/29d07cef-2f21-4632-a913-12cc11f04e23)
 
  #### Movement:
 - #### Arrow keys:
+Simple and responsive movement controls for players.
+
 ![image](https://github.com/user-attachments/assets/a1eddbbf-5305-4af1-b9dc-4a06b8baf664)
 
 - #### Gyro and Drag (Settings in Main Menu):
+Flexible input options for a customized gaming experience.
+
 ![image](https://github.com/user-attachments/assets/c769d79e-10cb-478c-8cf3-5b885bc01944)
 
 - #### Code:
+Key snippets showcasing the functionality behind player movement and game mechanics.
+
 ![image](https://github.com/user-attachments/assets/7442a713-9486-42e5-817c-7838f8c8d161)
 ![image](https://github.com/user-attachments/assets/a3821ef1-8917-437c-9e6b-04fa2893ab9c)
 
 - #### Rewarded Ads
+Visual of rewarded ads system allowing players to gain gems or benefits.
+
 ![image](https://github.com/user-attachments/assets/58d8d598-6c6f-40a4-8062-e95128e1c686)
 
 - #### Code:
@@ -88,7 +104,15 @@ Screenshots:
 ![image](https://github.com/user-attachments/assets/594d2e97-ea26-48e2-b1d5-8231dd0a6846)
 
 - #### Powerup, Mute & Pause:
+Functional GUI elements for player convenience, including muting, pausing, and activating power-ups.
+
 ![image](https://github.com/user-attachments/assets/ec494e11-0c3a-4f82-a096-5f0a80a49638)
+
+- #### CandyCoded HapticFeedback (Vibration)
+Integrated vibration feedback for enhanced player immersion and tactile responses.
+
+![image](https://github.com/user-attachments/assets/27e95783-1164-4870-a039-f7b9360db26e)
+
 
 ## <ins> References:
 
@@ -130,6 +154,7 @@ Knezovic,  A. (2023). Subway Surfers: Lessons from the Record-Breaking Mobile Ga
 - zoetamago, n.d. restaurant eatery with wooden furniture graphic novel [online] Available at: https://www.vecteezy.com/photo/32492752-restaurant-eatery-with-wooden-furniture-graphic-novel-anime-manga-wallpaper [Accessed 19 October 2024].​
 - freepik (2024) Flat vegetable and fruits background [online] Available at: https://www.freepik.com/premium-vector/flat-vegetable-fruits-background_4091987.htm [Accessed 1 Jan 2025]
 - Michael, V (2017) Free Transparent PNG - Video Icon Free Download [online] Available at: https://freepngimg.com/png/30060-video-icon-free-download [Accessed 1 Jan 2025]
+- Brian, G (2024) Lightning Bolt Icon [online] Available at: https://www.vecteezy.com/vector-art/533336-lightning-bolt-icon [Accessed 13 Jan 2025]
 
 ### <ins> Sound:
 - creatorassets (2021) 8-Bit Coin Sound Effect (Copyright Free) [online] Available at: https://creatorassets.com/a/8-bit-coin-sound-effects [Accessed 1 January 2025]
