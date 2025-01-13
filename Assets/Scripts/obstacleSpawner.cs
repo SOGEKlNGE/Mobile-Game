@@ -5,10 +5,10 @@ using UnityEngine;
 public class obstacleSpawner : MonoBehaviour
 {
     public GameObject[] obstaclePrefabs;
-    public float obstacleCooldown = 2f;
+    public float obstacleCooldown = 2.5f;
     private float obstacleTimer;
     private Camera mainCamera;
-    public float obstacleSpeed = 2f;
+    public float obstacleSpeed = 8f;
 
     // Start is called before the first frame update
     void Start()

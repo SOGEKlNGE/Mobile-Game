@@ -6,9 +6,9 @@ public class FoodSpawner : MonoBehaviour
     public GameObject[] foodPrefabs;
 
     // Time interval between food spawns and speed
-    public float spawnCooldown = 2f;
+    public float spawnCooldown = 0.8f;
     private float spawnTimer;
-    public float foodSpeed = 2;
+    public float foodSpeed = 3;
 
     // Camera reference to get screen boundaries
     private Camera mainCamera;
