@@ -13,6 +13,10 @@ public class PauseGame : MonoBehaviour
     public Button resumeButton;
     public Button restartButton;
     public Button exitButton;
+    //public Button guideButton;
+
+    //public GameObject guideImage;
+    //public bool isImageActive = false;
 
     void Start()
     {
@@ -20,6 +24,7 @@ public class PauseGame : MonoBehaviour
         resumeButton.onClick.AddListener(togglePause);  
         restartButton.onClick.AddListener(Restart);    
         exitButton.onClick.AddListener(Exit);
+        //guideButton.onClick.AddListener(Guide);
     }
 
     void Update()
@@ -45,6 +50,12 @@ public class PauseGame : MonoBehaviour
             isPaused = true;
         }
     }
+
+    //public void Guide()
+    //{
+    //    guideImage.SetActive(true);
+
+    //}
 
     public void Restart()
     {
