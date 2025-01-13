@@ -23,6 +23,11 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         _showAdButton.interactable = false;
     }
 
+    private void Start()
+    {
+        LoadAd();
+    }
+
     // Call this public method when you want to get an ad ready to show.
     public void LoadAd()
     {
@@ -60,8 +65,11 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
             Debug.LogWarning("Unity Ads Rewarded Ad Completed");
+            gemManager.gems += 10;
             gemManager.UpdateGemUI();
         }
+
+        _showAdButton.interactable = true;
     }
 
     // Implement Load and Show Listener error callbacks:

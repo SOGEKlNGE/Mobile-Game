@@ -71,7 +71,6 @@ public class timer : MonoBehaviour
             Debug.LogWarning("Time Count: " + timeCount);
         }
 
-        Debug.LogWarning($"AAAAAAAAAAAAAAA: {playAgain.gameObject.activeSelf}");
     }
 
     void DisplayTime(float timeToDisplay)
@@ -112,13 +111,13 @@ public class timer : MonoBehaviour
 
     public void PlayAgain()
     {
-        Debug.LogWarning("BUTTON CLICKED play again ");
+        Debug.LogWarning("Play Again Button Clicked");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ReturnToMenu()
     {
-        Debug.LogWarning("BUTTON CLICKED MENU ");
+        Debug.LogWarning("Menu Button Clicked ");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
